@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const MilhoPesoMedio = () => {
-    const [pesoMedioGraos, setPesoMedioGraos] = useState(0);
-    const [qtdEspigas, setQtdEspigas] = useState(0);
+    const [pesoMedioGraos, setPesoMedioGraos] = useState('');
+    const [qtdEspigas, setQtdEspigas] = useState('');
 
     return (
         <>
@@ -33,7 +33,7 @@ const MilhoPesoMedio = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="pesoMedioGraos"
                                                 value={pesoMedioGraos}
-                                                onChange={e => setPesoMedioGraos(Number(e.target.value))} />
+                                                onChange={e => setPesoMedioGraos(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -42,7 +42,7 @@ const MilhoPesoMedio = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="quantidadeEspigas"
                                                 value={qtdEspigas}
-                                                onChange={e => setQtdEspigas(Number(e.target.value))} />
+                                                onChange={e => setQtdEspigas(e.target.value)} />
                                         </div>
 
                                     </form>
@@ -51,7 +51,7 @@ const MilhoPesoMedio = () => {
                                         <div className="info-box-content">
                                             <span className="info-box-text text-center text-muted">Produtividade</span>
                                             <span className="info-box-number text-center text-muted mb-0">
-                                                {pesoMedioGraos * qtdEspigas / 1000} Kg/ha
+                                                {Number(pesoMedioGraos) * Number(qtdEspigas) / 1000} Kg/ha
                                             </span>
                                         </div>
                                     </div>

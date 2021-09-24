@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const MilhoMedioEspigas = () => {
-    const [mediaEspigas, setMediaEspigas] = useState(0);
-    const [pesoMedio, setPesoMedio] = useState(0);
-    const [espacamento, setEspacamento] = useState(0);
+    const [mediaEspigas, setMediaEspigas] = useState('');
+    const [pesoMedio, setPesoMedio] = useState('');
+    const [espacamento, setEspacamento] = useState('');
 
     return (
         <>
@@ -34,7 +34,7 @@ const MilhoMedioEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="mediaEspigas"
                                                 value={mediaEspigas}
-                                                onChange={e => setMediaEspigas(Number(e.target.value))} />
+                                                onChange={e => setMediaEspigas(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -42,7 +42,7 @@ const MilhoMedioEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="pesoMedio"
                                                 value={pesoMedio}
-                                                onChange={e => setPesoMedio(Number(e.target.value))} />
+                                                onChange={e => setPesoMedio(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -50,7 +50,7 @@ const MilhoMedioEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="espacamento"
                                                 value={espacamento}
-                                                onChange={e => setEspacamento(Number(e.target.value))} />
+                                                onChange={e => setEspacamento(e.target.value)} />
                                         </div>
 
                                         <div className="info-box bg-light">
@@ -59,7 +59,7 @@ const MilhoMedioEspigas = () => {
                                                 <span className="info-box-number text-center text-muted mb-0">
                                                     {
                                                         Math.round(
-                                                            ( (mediaEspigas * pesoMedio) / espacamento) / 1000)
+                                                            ( (Number(mediaEspigas) * Number(pesoMedio)) / Number(espacamento)) / 1000)
                                                     } Ton/ha
                                                 </span>
                                             </div>

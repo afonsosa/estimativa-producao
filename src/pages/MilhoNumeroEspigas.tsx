@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const MilhoNumeroEspigas = () => {
-    const [espigasEm4m2, setEspigasEm4m2] = useState(0);
-    const [fileirasGraos, setfileirasGraos] = useState(0);
-    const [graosPorFileiras, setGraosPorFileiras] = useState(0);
+    const [espigasEm4m2, setEspigasEm4m2] = useState('');
+    const [fileirasGraos, setfileirasGraos] = useState('');
+    const [graosPorFileiras, setGraosPorFileiras] = useState('');
 
     return(
         <>
@@ -35,7 +35,7 @@ const MilhoNumeroEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="espigasEm4m2"
                                                 value={espigasEm4m2}
-                                                onChange={e => setEspigasEm4m2(Number(e.target.value))} />
+                                                onChange={e => setEspigasEm4m2(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -44,7 +44,7 @@ const MilhoNumeroEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="fileirasGraos"
                                                 value={fileirasGraos}
-                                                onChange={e => setfileirasGraos(Number(e.target.value))} />
+                                                onChange={e => setfileirasGraos(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -53,7 +53,7 @@ const MilhoNumeroEspigas = () => {
                                             <input className="form-control" id="form-stacked-text" type="number"
                                                 name="graosPorFileiras"
                                                 value={graosPorFileiras}
-                                                onChange={e => setGraosPorFileiras(Number(e.target.value))} />
+                                                onChange={e => setGraosPorFileiras(e.target.value)} />
                                         </div>
 
                                         <div className="form-group">
@@ -68,9 +68,9 @@ const MilhoNumeroEspigas = () => {
                                             <span className="info-box-number text-center text-muted mb-0">
                                                 {
                                                     Math.round(
-                                                        espigasEm4m2 *
-                                                        fileirasGraos *
-                                                        graosPorFileiras *
+                                                        Number(espigasEm4m2) *
+                                                        Number(fileirasGraos) *
+                                                        Number(graosPorFileiras) *
                                                         0.7)} kg/ha
                                             </span>
                                         </div>
