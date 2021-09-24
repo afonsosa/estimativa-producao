@@ -10,7 +10,7 @@ const NavBar = () => {
                 <button className="navbar-toggler order-1 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse order-3">
+                <div className="collapse navbar-collapse order-3" id="navbarCollapse">
                     <ul className="navbar-nav">
                         <li className="nav-item dropdown">
                             <a id="subMenuMilho" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="nav-link dropdown-toggle">Milho</a>
